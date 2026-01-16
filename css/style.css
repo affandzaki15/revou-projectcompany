@@ -1,7 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  border-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
@@ -62,21 +65,70 @@ body {
   margin-top: 50px;
 }
 
+.headq {
+  padding: 70px;
+  margin-bottom: 20px;
+}
+
+.headq h1 {
+  padding-bottom: 40px;
+}
+
 .head {
-    display: flex;
-    gap: 60px;
-    padding: 120px;
+  display: flex;
+  gap: 60px;
 }
 
-.head img{
-    height: 150px;
-    width: 150px;
-    border-radius: 100px;
-    border: 2px solid #000;
+.head img {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  border: 2px solid #000;
 }
 
-.head .kota{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+.head .kota {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.linee {
+  width: 100%;
+  border-bottom: 2px solid #000;
+}
+
+/* profile */
+
+.profile-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-main img {
+  border-radius: 100%;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  padding: 40px 80px;
+}
+
+.text-main {
+  max-width: 800px;
+  padding: 80px;
+}
+
+
+
+/* footer */
+.footer {
+  justify-items: right;
+  padding-right: 10px;
+}
+
+/* Cari elemen main atau pembungkus konten tengah kamu */
+.main,
+.profile-main,
+.headq {
+  flex: 1; /* Ini akan mendorong footer ke titik paling bawah layar */
 }
