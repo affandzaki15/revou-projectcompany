@@ -54,11 +54,14 @@ body {
 }
 
 .main img {
-  width: 1366px;
-  height: 578px;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
   margin: 0 auto;
   display: block;
+  border-radius: 10px;
 }
+
 
 .line {
   border-bottom: 4px double #888;
@@ -77,7 +80,14 @@ body {
 .head {
   display: flex;
   gap: 60px;
+  flex-wrap: wrap;
+  justify-content: left;
 }
+
+.head .kota {
+  padding-left: 0;
+}
+
 
 .head img {
   height: 150px;
@@ -86,16 +96,11 @@ body {
   border: 2px solid #000;
 }
 
-.head .kota {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 40px;
-}
+
 
 .linee {
   width: 100%;
-  border-bottom: 2px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 /* profile */
@@ -115,10 +120,144 @@ body {
 
 .text-main {
   max-width: 800px;
-  padding: 80px;
+  gap: 20px;
+  padding-left: 80px;
+}
+
+.text-main h1 {
+  margin-bottom: 8px;
+}
+
+.text-main a {
+  background-color: #a74e0f;
+  text-decoration: none;
+  color: white;
+  padding: 9px;
+  position: relative;
+  top: 8px;
+  border-radius: 7px;
+  margin-top: 10px;
+}
+
+.text-main a:hover {
+  background-color: #69320b;
+  text-decoration: none;
+  color: white;
+  padding: 9px;
+  top: 10px;
+}
+
+@media (max-width: 768px) {
+  .profile-main {
+    flex-direction: column;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .profile-main img {
+    width: 250px;
+    height: 250px;
+  }
+  .text-main {
+    padding-left: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+/* message */
+#message-us {
+  padding: 100px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* penting */
+}
+
+form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.row label {
+  width: 120px;
+}
+
+.row span {
+  width: 10px;
+}
+
+.row input[type="text"],
+.row input[type="date"],
+textarea {
+  flex: 1; /* hanya input & textarea */
+}
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 
+.radio {
+  flex: none; /* radio ikut ukuran aslinya */
+}
+
+.row input {
+  padding: 6px 10px;
+  height: 16px;
+  
+}
+
+textarea {
+  padding: 6px 10px;
+  height: 80px;
+}
+
+.row input,
+textarea {
+  border: 2px solid #000; /* makin besar = makin tebal */
+}
+
+
+.btn-submit {
+  display: block;        /* penting */
+  width: 100%;
+  height: 40px;
+  line-height: 40px;     /* biar teks pas di tengah */
+  padding: 0;            /* reset padding default */
+}
+
+@media (max-width: 900px) {
+  #message-us {
+    padding: 40px 20px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  form,
+  .hasil {
+    width: 100%;
+  }
+}
+
+
+.hasil {
+  border: 1px solid #000;
+  padding: 20px;
+  width: 500px;
+}
 
 /* footer */
 .footer {
